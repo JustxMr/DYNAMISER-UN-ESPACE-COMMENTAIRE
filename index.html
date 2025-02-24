@@ -114,6 +114,8 @@
       if (!firstName || !lastName || !message) {
         errorMessage.style.display = "block"; // Affiche le message d'erreur
         return;
+      } else {
+        errorMessage.style.display = "none"; // Enleve le message d'erreur
       }
 
       // Re-crée les élement div pour un commentaire
