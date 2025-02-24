@@ -100,15 +100,15 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("form");
-    const commentList = document.getElementsByClassName("comment-list");
-    const errorMessage = document.getElementsByClassName("error-message");
+    const commentList = document.getElementById("comment-list");
+    const errorMessage = document.getElementById("error-message");
 
     form.addEventListener("submit", function(event) {
       event.preventDefault(); // n'envoi pas le formulaire par défaut
 
-      const firstName = document.getElementsByClassName("first-name").value.trim();
-      const lastName = document.getElementsByClassName("last-name").value.trim();
-      const message = document.getElementsByClassName("message").value.trim();
+      const firstName = document.getElementById("first-name").value.trim();
+      const lastName = document.getElementById("last-name").value.trim();
+      const message = document.getElementById("message").value.trim();
 
       // Vérifie les champs vides
       if (!firstName || !lastName || !message) {
@@ -132,9 +132,9 @@
       commentList.appendChild(newComment);
 
       // Champs remis a zéro après envoie
-      document.getElementsByClassName("first-name").value = "";
-      document.getElementsByClassName("last-name").value = "";
-      document.getElementsByClassName("message").value = "";
+      document.getElementById("first-name").value = "";
+      document.getElementById("last-name").value = "";
+      document.getElementById("message").value = "";
     });
   });
 </script>
