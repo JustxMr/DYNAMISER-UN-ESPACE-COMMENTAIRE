@@ -1,0 +1,2 @@
+Voici les documentations utilisé : 'https://developer.mozilla.org/fr/docs/Web/API/Document', 'https://developer.mozilla.org/fr/docs/Web/API/Document/getElementsByClassName'
+        'https://developer.mozilla.org/fr/docs/Glossary/DOM', 'https://developer.mozilla.org/fr/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity';

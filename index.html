@@ -96,5 +96,48 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    const commentList = document.getElementsByClassName("comment-list");
+    const errorMessage = document.getElementsByClassName("error-message");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // n'envoi pas le formulaire par défaut
+
+      const firstName = document.getElementsByClassName("first-name").value.trim();
+      const lastName = document.getElementsByClassName("last-name").value.trim();
+      const message = document.getElementsByClassName("message").value.trim();
+
+      // Vérifie les champs vides
+      if (!firstName || !lastName || !message) {
+        errorMessage.style.display = "block"; // Affiche le message d'erreur
+        return;
+      }
+
+      // Re-crée les élement div pour un commentaire
+      const newComment = document.createElement("div");
+      newComment.className = "flex space-x-4 text-sm text-gray-500";
+      newComment.innerHTML = `
+        <div class="flex-1 py-10 border-t border-gray-200">
+          <h3 class="font-medium text-gray-900">${firstName} ${lastName}</h3>
+          <div class="prose prose-sm mt-4 max-w-none text-gray-500">
+            <p>${message}</p>
+          </div>
+        </div>
+      `;
+
+      // Ajout du nouveau commentaire
+      commentList.appendChild(newComment);
+
+      // Champs remis a zéro après envoie
+      document.getElementsByClassName("first-name").value = "";
+      document.getElementsByClassName("last-name").value = "";
+      document.getElementsByClassName("message").value = "";
+    });
+  });
+</script>
+
 </body>
 </html>
